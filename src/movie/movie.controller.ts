@@ -8,6 +8,6 @@ export class MovieController {
 
   @Post()
   async create(@Body() createMovieDto: CreateMovieDto) {
-    return await this.movieService.create(createMovieDto)
+    await this.movieService.create(createMovieDto)
   }
 }

@@ -4,6 +4,7 @@ import { AppService } from './app.service'
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { UserModule } from './user/user.module'
 import { MovieModule } from './movie/movie.module'
+import { GenreModule } from './genre/genre.module'
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { MovieModule } from './movie/movie.module'
     }),
     UserModule,
     MovieModule,
+    GenreModule,
   ],
   controllers: [AppController],
   providers: [AppService],
