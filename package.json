@@ -19,8 +19,8 @@
       "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
       "test:e2e": "jest --config ./test/jest-e2e.json",
       "typeorm": "ts-node ./node_modules/typeorm/cli",
-      "migration:generate": "npm run typeorm migration:generate -d data-source.ts --pretty",
-      "migration:run": "npm run typeorm migration:run -- -d data-source.ts"
+      "migration:generate": "npm run typeorm migration:generate -- --dataSource data-source.ts --pretty",
+      "migration:run": "npm run typeorm migration:run -- --dataSource data-source.ts"
    },
    "dependencies": {
       "@nestjs/common": "^10.0.0",
@@ -28,6 +28,7 @@
       "@nestjs/mapped-types": "^2.0.2",
       "@nestjs/platform-express": "^10.0.0",
       "@nestjs/typeorm": "^10.0.0",
+      "class-transformer": "^0.5.1",
       "class-validator": "^0.14.0",
       "pg": "^8.4.0",
       "reflect-metadata": "^0.1.13",

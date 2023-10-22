@@ -17,7 +17,10 @@ export class GenreService {
   }
 
   async findAll() {
-    return await this.genreRepository.findAndCount()
+    return await this.genreRepository.findAndCount({
+      relations: { movies: true },
+      order: { createdAt: 'DESC' },
+    })
   }
 
   async findOne(id: string) {
@@ -27,10 +30,10 @@ export class GenreService {
   }
 
   async update(id: string, updateGenreDto: UpdateGenreDto) {
-    return await this.genreRepository.update(id, updateGenreDto)
+    await this.genreRepository.update(id, updateGenreDto)
   }
 
   async delete(id: string) {
-    return await this.genreRepository.softDelete(id)
+    await this.genreRepository.softDelete(id)
   }
 }

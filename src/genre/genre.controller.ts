@@ -17,7 +17,7 @@ export class GenreController {
 
   @Post()
   async create(@Body() createGenreDto: CreateGenreDto) {
-    return await this.genreService.create(createGenreDto)
+    await this.genreService.create(createGenreDto)
   }
 
   @Get()
@@ -27,7 +27,7 @@ export class GenreController {
 
   @Get('/:id')
   async findOne(@Param('id') id: string) {
-    return await this.genreService.findOne(id)
+    await this.genreService.findOne(id)
   }
 
   @Patch('/:id')
@@ -35,11 +35,11 @@ export class GenreController {
     @Param('id') id: string,
     @Body() updateGenreDto: UpdateGenreDto,
   ) {
-    return await this.genreService.update(id, updateGenreDto)
+    await this.genreService.update(id, updateGenreDto)
   }
 
   @Delete('/:id')
   async delete(@Param('id') id: string) {
-    return await this.genreService.delete(id)
+    await this.genreService.delete(id)
   }
 }

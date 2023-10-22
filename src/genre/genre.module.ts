@@ -6,6 +6,7 @@ import { GenreController } from './genre.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Genre])],
+  exports: [GenreService],
   controllers: [GenreController],
   providers: [GenreService],
 })
